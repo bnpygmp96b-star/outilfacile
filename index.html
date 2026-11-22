@@ -6,69 +6,231 @@
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="OutilFacile : des calculateurs et outils gratuits pour simplifier votre quotidien.">
+  <meta name="description" content="OutilFacile : des outils gratuits et simples pour calculer des pourcentages, réductions, TVA, compter des mots et calculer des durées.">
 
-<title>OutilFacile - Les outils gratuits du quotidien</title>
+  <meta name="theme-color" content="#155eef">
 
-<style>
+  <title>OutilFacile - Les outils gratuits du quotidien</title>
 
-*{box-sizing:border-box;margin:0;padding:0}
+  <link rel="canonical" href="https://bnpygmp96b-star.github.io/outilfacile/">
 
-html{scroll-behavior:smooth}
+  <style>
 
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#253047;line-height:1.6}
+    * { box-sizing: border-box; }
 
-header{background:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;box-shadow:0 2px 12px #0000000c;position:sticky;top:0;z-index:10}
+    body {
 
-.logo{font-size:25px;font-weight:800;color:#5268d9}
+      margin: 0;
 
-nav{display:flex;gap:15px;flex-wrap:wrap}
+      font-family: Arial, sans-serif;
 
-nav a{color:#39445c;text-decoration:none;font-size:14px;font-weight:bold}
+      color: #172033;
 
-nav a:hover{color:#5268d9}
+      background: #f5f7fb;
 
-.hero{text-align:center;padding:55px 18px 40px;background:linear-gradient(135deg,#e8edff,#f7eaff)}
+      line-height: 1.6;
 
-.hero h1{font-size:34px;color:#293b79;margin-bottom:10px}
+    }
 
-.hero p{color:#59647d}
+    header {
 
-.container{max-width:1050px;margin:30px auto;padding:0 16px}
+      background: #155eef;
 
-.search{width:100%;padding:15px;border:1px solid #dce1ed;border-radius:12px;font-size:16px;margin-bottom:25px}
+      color: white;
 
-.section-title{font-size:24px;margin:30px 0 18px;color:#303d68}
+      padding: 22px 18px;
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    }
 
-.card{background:white;padding:22px;border-radius:16px;box-shadow:0 4px 18px #1c2b4d0b}
+    .container { max-width: 1050px; margin: auto; }
 
-.card h3{font-size:19px;margin-bottom:6px;color:#394c91}
+    .top {
 
-.card p{font-size:14px;color:#707a90;margin-bottom:15px}
+      display: flex;
 
-label{display:block;font-size:14px;font-weight:bold;margin:12px 0 5px}
+      justify-content: space-between;
 
-input,select{width:100%;padding:12px;border:1px solid #d9deea;border-radius:9px;font-size:16px;background:#fff}
+      align-items: center;
 
-button{border:0;background:#5268d9;color:white;padding:12px 17px;border-radius:9px;font-size:15px;font-weight:bold;cursor:pointer;margin-top:13px;width:100%}
+      gap: 15px;
 
-button:hover{background:#3e53bd}
+      flex-wrap: wrap;
 
-.result{background:#eef1ff;padding:13px;border-radius:9px;margin-top:13px;font-weight:bold;color:#344aab;overflow-wrap:anywhere}
+    }
 
-.hidden{display:none!important}
+    .logo { font-size: 25px; font-weight: bold; }
 
-footer{text-align:center;padding:30px 15px;color:#788198;font-size:13px;margin-top:40px}
+    nav a {
 
-@media(max-width:600px){header{justify-content:center}nav{justify-content:center;gap:12px}.hero h1{font-size:27px}}
+      color: white;
 
-</style>
+      text-decoration: none;
+
+      margin-left: 15px;
+
+      font-size: 14px;
+
+    }
+
+    .hero {
+
+      text-align: center;
+
+      padding: 55px 15px 35px;
+
+    }
+
+    .hero h1 { font-size: 34px; margin-bottom: 10px; }
+
+    .hero p { color: #596579; }
+
+    .search {
+
+      width: 100%;
+
+      max-width: 480px;
+
+      padding: 14px;
+
+      border: 1px solid #dce2ed;
+
+      border-radius: 10px;
+
+      font-size: 16px;
+
+      margin-top: 15px;
+
+    }
+
+    .tools {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+      gap: 18px;
+
+      padding: 20px 15px 45px;
+
+    }
+
+    .card {
+
+      background: white;
+
+      border: 1px solid #e5eaf2;
+
+      border-radius: 15px;
+
+      padding: 22px;
+
+      box-shadow: 0 4px 15px rgba(20, 40, 80, .04);
+
+    }
+
+    .card h2 { font-size: 20px; margin-top: 0; }
+
+    input, select {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin: 7px 0;
+
+      border: 1px solid #d5dce8;
+
+      border-radius: 8px;
+
+      font-size: 15px;
+
+    }
+
+    button {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin-top: 8px;
+
+      background: #155eef;
+
+      color: white;
+
+      border: 0;
+
+      border-radius: 8px;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+    }
+
+    button:hover { background: #104bc2; }
+
+    .result {
+
+      background: #edf4ff;
+
+      padding: 11px;
+
+      border-radius: 8px;
+
+      margin-top: 12px;
+
+      min-height: 42px;
+
+      font-weight: bold;
+
+      overflow-wrap: anywhere;
+
+    }
+
+    section.info {
+
+      background: white;
+
+      padding: 35px 20px;
+
+      margin-top: 15px;
+
+    }
+
+    section.info h2 { color: #155eef; }
+
+    .faq-item { margin: 18px 0; }
+
+    footer {
+
+      text-align: center;
+
+      background: #172033;
+
+      color: white;
+
+      padding: 25px 15px;
+
+      font-size: 14px;
+
+    }
+
+    footer a { color: white; }
+
+    @media(max-width: 600px) {
+
+      .hero h1 { font-size: 27px; }
+
+      nav a { margin: 0 8px 0 0; }
+
+    }
+
+  </style>
 
 </head>
 
@@ -76,261 +238,335 @@ footer{text-align:center;padding:30px 15px;color:#788198;font-size:13px;margin-t
 
 <header>
 
-<div class="logo">✦ OutilFacile</div>
+  <div class="container top">
 
-<nav>
+    <div class="logo">🔵 OutilFacile</div>
 
-<a href="#accueil">Accueil</a>
+    <nav>
 
-<a href="#calculs">Calculs</a>
+      <a href="#outils">Outils</a>
 
-<a href="#conversions">Conversions</a>
+      <a href="#apropos">À propos</a>
 
-<a href="#texte">Texte</a>
+      <a href="#faq">FAQ</a>
 
-<a href="#dates">Dates</a>
+    </nav>
 
-</nav>
+  </div>
 
 </header>
 
-<section class="hero" id="accueil">
+<main>
 
-<h1>Bienvenue sur OutilFacile !</h1>
+  <div class="hero container">
 
-<p>Des outils gratuits, simples et pratiques pour votre quotidien.</p>
+    <h1>Les outils simples du quotidien</h1>
 
-</section>
+    <p>Des calculateurs gratuits, rapides et faciles à utiliser.</p>
 
-<main class="container">
+    <input class="search" id="search" type="search"
 
-<input class="search" id="search" type="search" placeholder="🔎 Rechercher un outil..." oninput="filterTools()">
+      placeholder="🔎 Rechercher un outil..."
 
-<h2 class="section-title" id="calculs">🧮 Calculs</h2>
+      oninput="searchTools()">
 
-<div class="grid">
+  </div>
 
-<div class="card tool" data-name="pourcentage calcul pourcentage">
+  <div class="tools container" id="outils">
 
-<h3>Calculateur de pourcentage</h3>
+    <div class="card" data-name="pourcentage">
 
-<p>Calculez facilement un pourcentage d'une valeur.</p>
+      <h2>📊 Calculateur de pourcentage</h2>
 
-<label>Valeur</label><input id="pval" type="number" placeholder="Ex : 200">
+      <p>Calculer un pourcentage d'un nombre.</p>
 
-<label>Pourcentage (%)</label><input id="ppct" type="number" placeholder="Ex : 10">
+      <input type="number" id="p1" placeholder="Nombre">
 
-<button onclick="percentage()">Calculer</button>
+      <input type="number" id="p2" placeholder="Pourcentage">
 
-<div class="result" id="pres">Résultat : —</div>
+      <button onclick="percentage()">Calculer</button>
 
-</div>
+      <div class="result" id="r1">Résultat ici</div>
 
-<div class="card tool" data-name="réduction remise promotion prix solde">
+    </div>
 
-<h3>Calculateur de réduction</h3>
+    <div class="card" data-name="reduction remise prix">
 
-<p>Découvrez le prix après une remise.</p>
+      <h2>🏷️ Calculateur de réduction</h2>
 
-<label>Prix initial (€)</label><input id="rval" type="number" placeholder="Ex : 100">
+      <p>Calculer le prix après une remise.</p>
 
-<label>Réduction (%)</label><input id="rpct" type="number" placeholder="Ex : 20">
+      <input type="number" id="d1" placeholder="Prix initial (€)">
 
-<button onclick="discount()">Calculer</button>
+      <input type="number" id="d2" placeholder="Réduction (%)">
 
-<div class="result" id="rres">Prix final : —</div>
+      <button onclick="discount()">Calculer</button>
 
-</div>
+      <div class="result" id="r2">Résultat ici</div>
 
-<div class="card tool" data-name="tva taxe">
+    </div>
 
-<h3>Calculateur de TVA</h3>
+    <div class="card" data-name="tva taxe">
 
-<p>Calculez le montant de la TVA et le prix TTC.</p>
+      <h2>🧾 Calculateur de TVA</h2>
 
-<label>Prix hors taxe (€)</label><input id="tval" type="number" placeholder="Ex : 100">
+      <p>Ajouter une TVA à un prix hors taxe.</p>
 
-<label>Taux de TVA</label>
+      <input type="number" id="t1" placeholder="Prix HT (€)">
 
-<select id="ttaux">
+      <select id="t2">
 
-<option value="20">20 %</option>
+        <option value="20">TVA 20 %</option>
 
-<option value="10">10 %</option>
+        <option value="10">TVA 10 %</option>
 
-<option value="5.5">5,5 %</option>
+        <option value="5.5">TVA 5,5 %</option>
 
-<option value="2.1">2,1 %</option>
+        <option value="2.1">TVA 2,1 %</option>
 
-</select>
+      </select>
 
-<button onclick="vat()">Calculer</button>
+      <button onclick="vat()">Calculer</button>
 
-<div class="result" id="tres">Résultat : —</div>
+      <div class="result" id="r3">Résultat ici</div>
 
-</div>
+    </div>
 
-</div>
+    <div class="card" data-name="devise monnaie conversion">
 
-<h2 class="section-title" id="conversions">💱 Conversions</h2>
+      <h2>💱 Convertisseur de devises</h2>
 
-<div class="grid">
+      <p>Convertir avec un taux que tu renseignes.</p>
 
-<div class="card tool" data-name="convertisseur devises monnaie euro dollar">
+      <input type="number" id="c1" placeholder="Montant à convertir">
 
-<h3>Convertisseur de devises</h3>
+      <input type="number" id="c2" placeholder="Taux de conversion">
 
-<p>Convertissez une somme avec un taux que vous indiquez.</p>
+      <button onclick="currency()">Convertir</button>
 
-<label>Montant</label><input id="cval" type="number" placeholder="Ex : 100">
+      <div class="result" id="r4">Résultat ici</div>
 
-<label>Taux de conversion</label><input id="crate" type="number" step="any" placeholder="Ex : 1.08">
+      <small>Le taux doit être renseigné manuellement.</small>
 
-<label>Nom de la devise de départ</label><input id="cfrom" placeholder="Ex : EUR">
+    </div>
 
-<label>Nom de la devise d'arrivée</label><input id="cto" placeholder="Ex : USD">
+    <div class="card" data-name="mots caractères texte compteur">
 
-<button onclick="currency()">Convertir</button>
+      <h2>📝 Compteur de mots</h2>
 
-<div class="result" id="cres">Résultat : —</div>
+      <p>Compter les mots et les caractères d'un texte.</p>
 
-</div>
+      <input type="text" id="wordText" placeholder="Écris ton texte ici">
 
-</div>
+      <button onclick="countWords()">Compter</button>
 
-<h2 class="section-title" id="texte">✍️ Texte</h2>
+      <div class="result" id="r5">Résultat ici</div>
 
-<div class="grid">
+    </div>
 
-<div class="card tool" data-name="compteur mots caractères texte lettres">
+    <div class="card" data-name="date durée jours temps">
 
-<h3>Compteur de mots et caractères</h3>
+      <h2>📅 Calculateur de durée</h2>
 
-<p>Comptez les mots et les caractères de votre texte.</p>
+      <p>Calculer le nombre de jours entre deux dates.</p>
 
-<label>Votre texte</label>
+      <input type="date" id="date1">
 
-<textarea id="words" rows="5" style="width:100%;padding:12px;border:1px solid #d9deea;border-radius:9px;font:16px Arial" oninput="countWords()" placeholder="Écrivez votre texte ici..."></textarea>
+      <input type="date" id="date2">
 
-<div class="result" id="wres">Mots : 0 | Caractères : 0</div>
+      <button onclick="duration()">Calculer</button>
 
-</div>
+      <div class="result" id="r6">Résultat ici</div>
 
-</div>
+    </div>
 
-<h2 class="section-title" id="dates">📅 Dates</h2>
+  </div>
 
-<div class="grid">
+  <section class="info" id="apropos">
 
-<div class="card tool" data-name="date durée jours calendrier différence">
+    <div class="container">
 
-<h3>Calculateur de durée entre deux dates</h3>
+      <h2>À propos d'OutilFacile</h2>
 
-<p>Découvrez le nombre de jours entre deux dates.</p>
+      <p>OutilFacile est un site qui rassemble des outils pratiques et gratuits pour faciliter les petits calculs du quotidien. Notre objectif est de proposer une expérience simple, rapide et accessible sur téléphone comme sur ordinateur.</p>
 
-<label>Date de début</label><input type="date" id="date1">
+    </div>
 
-<label>Date de fin</label><input type="date" id="date2">
+  </section>
 
-<button onclick="dateDiff()">Calculer</button>
+  <section class="info" id="faq">
 
-<div class="result" id="dres">Durée : —</div>
+    <div class="container">
 
-</div>
+      <h2>Questions fréquentes</h2>
 
-</div>
+      <div class="faq-item">
+
+        <strong>Les outils sont-ils gratuits ?</strong>
+
+        <p>Oui, les outils proposés sur OutilFacile sont gratuits.</p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <strong>Faut-il créer un compte ?</strong>
+
+        <p>Non, tu peux utiliser les calculateurs directement.</p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <strong>Le site fonctionne-t-il sur téléphone ?</strong>
+
+        <p>Oui, le site est adapté aux téléphones et aux ordinateurs.</p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <strong>Le convertisseur utilise-t-il les taux en direct ?</strong>
+
+        <p>Non, le taux de conversion doit être renseigné manuellement.</p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </main>
 
 <footer>
 
-<p>© 2026 OutilFacile - Tous droits réservés.</p>
+  <p>© 2026 OutilFacile - Tous droits réservés.</p>
 
-<p>Des outils gratuits pour vous simplifier la vie.</p>
+  <p>Un outil simple pour chaque jour.</p>
 
 </footer>
 
 <script>
 
-function number(id){return Number(document.getElementById(id).value)}
+function val(id) {
 
-function percentage(){
-
-let v=number('pval'),p=number('ppct');
-
-document.getElementById('pres').textContent='Résultat : '+(v*p/100).toLocaleString('fr-FR',{maximumFractionDigits:2});
+  return Number(document.getElementById(id).value);
 
 }
 
-function discount(){
+function money(n) {
 
-let v=number('rval'),p=number('rpct');
+  return n.toLocaleString("fr-FR", {
 
-if(p<0||p>100){document.getElementById('rres').textContent='Entrez une réduction entre 0 et 100 %.';return}
+    minimumFractionDigits: 2,
 
-let result=v*(1-p/100);
+    maximumFractionDigits: 2
 
-document.getElementById('rres').textContent='Prix final : '+result.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
-
-}
-
-function vat(){
-
-let v=number('tval'),p=number('ttaux');
-
-let tax=v*p/100;
-
-document.getElementById('tres').textContent='TVA : '+tax.toFixed(2)+' € | TTC : '+(v+tax).toFixed(2)+' €';
+  }) + " €";
 
 }
 
-function currency(){
+function percentage() {
 
-let v=number('cval'),r=number('crate');
+  let a = val("p1"), b = val("p2");
 
-let from=document.getElementById('cfrom').value.trim().toUpperCase();
+  document.getElementById("r1").textContent =
 
-let to=document.getElementById('cto').value.trim().toUpperCase();
-
-if(!from||!to||r<=0){document.getElementById('cres').textContent='Indiquez les devises et un taux positif.';return}
-
-document.getElementById('cres').textContent=v+' '+from+' = '+(v*r).toLocaleString('fr-FR',{maximumFractionDigits:2})+' '+to;
+    "Résultat : " + (a * b / 100).toLocaleString("fr-FR");
 
 }
 
-function countWords(){
+function discount() {
 
-let t=document.getElementById('words').value.trim();
+  let a = val("d1"), b = val("d2");
 
-let words=t?t.split(/\s+/).length:0;
+  let result = a * (1 - b / 100);
 
-document.getElementById('wres').textContent='Mots : '+words+' | Caractères : '+document.getElementById('words').value.length;
+  document.getElementById("r2").textContent =
 
-}
-
-function dateDiff(){
-
-let a=document.getElementById('date1').value,b=document.getElementById('date2').value;
-
-if(!a||!b){document.getElementById('dres').textContent='Choisissez les deux dates.';return}
-
-let start=new Date(a+'T12:00:00'),end=new Date(b+'T12:00:00');
-
-let days=Math.round(Math.abs(end-start)/86400000);
-
-document.getElementById('dres').textContent='Durée : '+days+' jour(s)';
+    "Prix final : " + money(result);
 
 }
 
-function filterTools(){
+function vat() {
 
-let q=document.getElementById('search').value.toLowerCase().trim();
+  let a = val("t1"), b = val("t2");
 
-document.querySelectorAll('.tool').forEach(card=>{
+  document.getElementById("r3").textContent =
 
-card.classList.toggle('hidden',!card.textContent.toLowerCase().includes(q)&&!card.dataset.name.includes(q));
+    "Prix TTC : " + money(a * (1 + b / 100));
 
-});
+}
+
+function currency() {
+
+  let a = val("c1"), b = val("c2");
+
+  document.getElementById("r4").textContent =
+
+    "Montant converti : " + (a * b).toLocaleString("fr-FR", {
+
+      maximumFractionDigits: 4
+
+    });
+
+}
+
+function countWords() {
+
+  let text = document.getElementById("wordText").value.trim();
+
+  let words = text ? text.split(/\s+/).length : 0;
+
+  document.getElementById("r5").textContent =
+
+    words + " mot(s) • " + text.length + " caractère(s)";
+
+}
+
+function duration() {
+
+  let a = document.getElementById("date1").value;
+
+  let b = document.getElementById("date2").value;
+
+  if (!a || !b) {
+
+    document.getElementById("r6").textContent =
+
+      "Choisis les deux dates.";
+
+    return;
+
+  }
+
+  let days = Math.abs(
+
+    (Date.parse(b + "T00:00:00") -
+
+     Date.parse(a + "T00:00:00")) / 86400000
+
+  );
+
+  document.getElementById("r6").textContent =
+
+    days + " jour(s) entre les deux dates.";
+
+}
+
+function searchTools() {
+
+  let q = document.getElementById("search").value.toLowerCase();
+
+  document.querySelectorAll(".card").forEach(card => {
+
+    card.style.display =
+
+      card.dataset.name.includes(q) ||
+
+      card.textContent.toLowerCase().includes(q) ? "" : "none";
+
+  });
 
 }
 
