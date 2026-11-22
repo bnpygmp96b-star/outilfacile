@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="OutilFacile : des calculateurs et outils gratuits pour simplifier votre quotidien.">
+
+<title>OutilFacile - Les outils gratuits du quotidien</title>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#253047;line-height:1.6}
+
+header{background:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;box-shadow:0 2px 12px #0000000c;position:sticky;top:0;z-index:10}
+
+.logo{font-size:25px;font-weight:800;color:#5268d9}
+
+nav{display:flex;gap:15px;flex-wrap:wrap}
+
+nav a{color:#39445c;text-decoration:none;font-size:14px;font-weight:bold}
+
+nav a:hover{color:#5268d9}
+
+.hero{text-align:center;padding:55px 18px 40px;background:linear-gradient(135deg,#e8edff,#f7eaff)}
+
+.hero h1{font-size:34px;color:#293b79;margin-bottom:10px}
+
+.hero p{color:#59647d}
+
+.container{max-width:1050px;margin:30px auto;padding:0 16px}
+
+.search{width:100%;padding:15px;border:1px solid #dce1ed;border-radius:12px;font-size:16px;margin-bottom:25px}
+
+.section-title{font-size:24px;margin:30px 0 18px;color:#303d68}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+
+.card{background:white;padding:22px;border-radius:16px;box-shadow:0 4px 18px #1c2b4d0b}
+
+.card h3{font-size:19px;margin-bottom:6px;color:#394c91}
+
+.card p{font-size:14px;color:#707a90;margin-bottom:15px}
+
+label{display:block;font-size:14px;font-weight:bold;margin:12px 0 5px}
+
+input,select{width:100%;padding:12px;border:1px solid #d9deea;border-radius:9px;font-size:16px;background:#fff}
+
+button{border:0;background:#5268d9;color:white;padding:12px 17px;border-radius:9px;font-size:15px;font-weight:bold;cursor:pointer;margin-top:13px;width:100%}
+
+button:hover{background:#3e53bd}
+
+.result{background:#eef1ff;padding:13px;border-radius:9px;margin-top:13px;font-weight:bold;color:#344aab;overflow-wrap:anywhere}
+
+.hidden{display:none!important}
+
+footer{text-align:center;padding:30px 15px;color:#788198;font-size:13px;margin-top:40px}
+
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center;gap:12px}.hero h1{font-size:27px}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">✦ OutilFacile</div>
+
+<nav>
+
+<a href="#accueil">Accueil</a>
+
+<a href="#calculs">Calculs</a>
+
+<a href="#conversions">Conversions</a>
+
+<a href="#texte">Texte</a>
+
+<a href="#dates">Dates</a>
+
+</nav>
+
+</header>
+
+<section class="hero" id="accueil">
+
+<h1>Bienvenue sur OutilFacile !</h1>
+
+<p>Des outils gratuits, simples et pratiques pour votre quotidien.</p>
+
+</section>
+
+<main class="container">
+
+<input class="search" id="search" type="search" placeholder="🔎 Rechercher un outil..." oninput="filterTools()">
+
+<h2 class="section-title" id="calculs">🧮 Calculs</h2>
+
+<div class="grid">
+
+<div class="card tool" data-name="pourcentage calcul pourcentage">
+
+<h3>Calculateur de pourcentage</h3>
+
+<p>Calculez facilement un pourcentage d'une valeur.</p>
+
+<label>Valeur</label><input id="pval" type="number" placeholder="Ex : 200">
+
+<label>Pourcentage (%)</label><input id="ppct" type="number" placeholder="Ex : 10">
+
+<button onclick="percentage()">Calculer</button>
+
+<div class="result" id="pres">Résultat : —</div>
+
+</div>
+
+<div class="card tool" data-name="réduction remise promotion prix solde">
+
+<h3>Calculateur de réduction</h3>
+
+<p>Découvrez le prix après une remise.</p>
+
+<label>Prix initial (€)</label><input id="rval" type="number" placeholder="Ex : 100">
+
+<label>Réduction (%)</label><input id="rpct" type="number" placeholder="Ex : 20">
+
+<button onclick="discount()">Calculer</button>
+
+<div class="result" id="rres">Prix final : —</div>
+
+</div>
+
+<div class="card tool" data-name="tva taxe">
+
+<h3>Calculateur de TVA</h3>
+
+<p>Calculez le montant de la TVA et le prix TTC.</p>
+
+<label>Prix hors taxe (€)</label><input id="tval" type="number" placeholder="Ex : 100">
+
+<label>Taux de TVA</label>
+
+<select id="ttaux">
+
+<option value="20">20 %</option>
+
+<option value="10">10 %</option>
+
+<option value="5.5">5,5 %</option>
+
+<option value="2.1">2,1 %</option>
+
+</select>
+
+<button onclick="vat()">Calculer</button>
+
+<div class="result" id="tres">Résultat : —</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="conversions">💱 Conversions</h2>
+
+<div class="grid">
+
+<div class="card tool" data-name="convertisseur devises monnaie euro dollar">
+
+<h3>Convertisseur de devises</h3>
+
+<p>Convertissez une somme avec un taux que vous indiquez.</p>
+
+<label>Montant</label><input id="cval" type="number" placeholder="Ex : 100">
+
+<label>Taux de conversion</label><input id="crate" type="number" step="any" placeholder="Ex : 1.08">
+
+<label>Nom de la devise de départ</label><input id="cfrom" placeholder="Ex : EUR">
+
+<label>Nom de la devise d'arrivée</label><input id="cto" placeholder="Ex : USD">
+
+<button onclick="currency()">Convertir</button>
+
+<div class="result" id="cres">Résultat : —</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="texte">✍️ Texte</h2>
+
+<div class="grid">
+
+<div class="card tool" data-name="compteur mots caractères texte lettres">
+
+<h3>Compteur de mots et caractères</h3>
+
+<p>Comptez les mots et les caractères de votre texte.</p>
+
+<label>Votre texte</label>
+
+<textarea id="words" rows="5" style="width:100%;padding:12px;border:1px solid #d9deea;border-radius:9px;font:16px Arial" oninput="countWords()" placeholder="Écrivez votre texte ici..."></textarea>
+
+<div class="result" id="wres">Mots : 0 | Caractères : 0</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="dates">📅 Dates</h2>
+
+<div class="grid">
+
+<div class="card tool" data-name="date durée jours calendrier différence">
+
+<h3>Calculateur de durée entre deux dates</h3>
+
+<p>Découvrez le nombre de jours entre deux dates.</p>
+
+<label>Date de début</label><input type="date" id="date1">
+
+<label>Date de fin</label><input type="date" id="date2">
+
+<button onclick="dateDiff()">Calculer</button>
+
+<div class="result" id="dres">Durée : —</div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+<p>© 2026 OutilFacile - Tous droits réservés.</p>
+
+<p>Des outils gratuits pour vous simplifier la vie.</p>
+
+</footer>
+
+<script>
+
+function number(id){return Number(document.getElementById(id).value)}
+
+function percentage(){
+
+let v=number('pval'),p=number('ppct');
+
+document.getElementById('pres').textContent='Résultat : '+(v*p/100).toLocaleString('fr-FR',{maximumFractionDigits:2});
+
+}
+
+function discount(){
+
+let v=number('rval'),p=number('rpct');
+
+if(p<0||p>100){document.getElementById('rres').textContent='Entrez une réduction entre 0 et 100 %.';return}
+
+let result=v*(1-p/100);
+
+document.getElementById('rres').textContent='Prix final : '+result.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+
+}
+
+function vat(){
+
+let v=number('tval'),p=number('ttaux');
+
+let tax=v*p/100;
+
+document.getElementById('tres').textContent='TVA : '+tax.toFixed(2)+' € | TTC : '+(v+tax).toFixed(2)+' €';
+
+}
+
+function currency(){
+
+let v=number('cval'),r=number('crate');
+
+let from=document.getElementById('cfrom').value.trim().toUpperCase();
+
+let to=document.getElementById('cto').value.trim().toUpperCase();
+
+if(!from||!to||r<=0){document.getElementById('cres').textContent='Indiquez les devises et un taux positif.';return}
+
+document.getElementById('cres').textContent=v+' '+from+' = '+(v*r).toLocaleString('fr-FR',{maximumFractionDigits:2})+' '+to;
+
+}
+
+function countWords(){
+
+let t=document.getElementById('words').value.trim();
+
+let words=t?t.split(/\s+/).length:0;
+
+document.getElementById('wres').textContent='Mots : '+words+' | Caractères : '+document.getElementById('words').value.length;
+
+}
+
+function dateDiff(){
+
+let a=document.getElementById('date1').value,b=document.getElementById('date2').value;
+
+if(!a||!b){document.getElementById('dres').textContent='Choisissez les deux dates.';return}
+
+let start=new Date(a+'T12:00:00'),end=new Date(b+'T12:00:00');
+
+let days=Math.round(Math.abs(end-start)/86400000);
+
+document.getElementById('dres').textContent='Durée : '+days+' jour(s)';
+
+}
+
+function filterTools(){
+
+let q=document.getElementById('search').value.toLowerCase().trim();
+
+document.querySelectorAll('.tool').forEach(card=>{
+
+card.classList.toggle('hidden',!card.textContent.toLowerCase().includes(q)&&!card.dataset.name.includes(q));
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
